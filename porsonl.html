@@ -1,0 +1,1843 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="pageTitle">DANIEL TSIGU - My Personal Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+
+
+    <link rel="alternate" hreflang="en" href="https://yourwebsite.com/en/" />
+    <link rel="alternate" hreflang="am" href="https://yourwebsite.com/am/" />
+    <link rel="alternate" hreflang="om" href="https://yourwebsite.com/om/" />
+    <link rel="alternate" hreflang="ti" href="https://yourwebsite.com/ti/" />
+    <link rel="alternate" hreflang="hi" href="https://yourwebsite.com/hi/" />
+    <link rel="alternate" hreflang="es" href="https://yourwebsite.com/es/" />
+    <link rel="alternate" hreflang="fr" href="https://yourwebsite.com/fr/" />
+    <link rel="alternate" hreflang="ar" href="https://yourwebsite.com/ar/" />
+    <link rel="alternate" hreflang="zh" href="https://yourwebsite.com/zh/" />
+    <link rel="alternate" hreflang="x-default" href="https://yourwebsite.com/" />
+    <style>
+        /* General Styling */
+        :root {
+            --primary-color: #3498db; /* A vibrant blue */
+            --secondary-color: #2c3e50; /* Darker blue/grey */
+            --accent-color: #e74c3c; /* Red for highlights */
+            --text-color: #333;
+            --light-bg: #f4f7f6; /* Light greyish background */
+            --dark-bg: #222831; /* Even darker for footer/nav */
+            --white: #fff;
+            --border-radius: 8px;
+            --transition-speed: 0.3s;
+            --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
+            --shadow-strong: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif; /* Body text font */
+            line-height: 1.7; /* Increased line height for readability */
+            color: var(--text-color);
+            background-color: var(--white);
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            font-size: 16px; /* Base font size */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 25px; /* Slightly more padding */
+        }
+
+        .section-padding {
+            padding: 100px 0; /* More padding for sections */
+        }
+
+        .bg-light {
+            background-color: var(--light-bg);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif; /* Headings font */
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4.5em; /* Larger hero heading */
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: 3.2em; /* Slightly larger */
+            margin-bottom: 50px; /* More space below heading */
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 90px; /* Wider underline */
+            height: 5px; /* Thicker underline */
+            background-color: var(--primary-color);
+            margin: 15px auto 0;
+            border-radius: 3px;
+        }
+
+        p {
+            margin-bottom: 18px; /* Slightly more space */
+            font-size: 1.05em; /* Slightly larger body text */
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Buttons */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-color), #5dade2); /* Gradient background */
+            color: var(--white);
+            padding: 16px 35px; /* More generous padding */
+            border-radius: var(--border-radius);
+            transition: all var(--transition-speed) ease-in-out;
+            text-transform: uppercase;
+            font-weight: 600; /* Poppins semi-bold */
+            letter-spacing: 1.2px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            font-size: 1.1em;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(45deg, #5dade2, var(--primary-color)); /* Reverse gradient on hover */
+            transform: translateY(-5px) scale(1.02); /* Slight lift and scale */
+            box-shadow: var(--shadow-medium);
+        }
+
+        .cta-button.secondary {
+            background: var(--secondary-color);
+            margin-top: 25px;
+            font-size: 1em;
+            padding: 14px 30px;
+        }
+
+        .cta-button.secondary:hover {
+            background: #4a5a6a; /* Darker secondary */
+            transform: translateY(-5px) scale(1.02);
+        }
+
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://source.unsplash.com/random/1920x1080/?ethiopia,city,skyline') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            position: relative; /* For hero overlay */
+        }
+
+        header::after { /* Subtle overlay for texture */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.1);
+            pointer-events: none;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px 40px;
+            background-color: rgba(0, 0, 0, 0.6); /* Slightly darker semi-transparent background */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        nav.scrolled {
+            background-color: var(--dark-bg); /* Solid background on scroll */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .logo {
+            font-size: 2.2em; /* Slightly larger logo */
+            font-weight: 700; /* Poppins bold */
+            color: var(--primary-color); /* Primary color for logo */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 40px; /* More spacing */
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 600; /* Poppins semi-bold */
+            font-size: 1.15em; /* Slightly larger nav links */
+            padding: 8px 0;
+            position: relative;
+            transition: color var(--transition-speed);
+        }
+
+        .nav-links a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background: var(--accent-color); /* Accent color for hover underline */
+            transition: width var(--transition-speed) ease-out;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 120px;
+        }
+
+        .hero-content h1 {
+            font-size: 5.5em;
+            margin-bottom: 25px;
+            color: var(--white);
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.9em;
+            margin-bottom: 50px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300; /* Poppins light */
+            max-width: 800px;
+        }
+
+        /* Burger Menu (Mobile) */
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 30px; /* Larger burger lines */
+            height: 4px;
+            background-color: var(--white);
+            margin: 6px;
+            transition: all var(--transition-speed) ease;
+        }
+
+
+        /* Language Selector Styling */
+        .language-selector {
+            margin-left: auto;
+            margin-right: 25px;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .language-selector select {
+            padding: 10px 15px; /* More padding */
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: var(--border-radius);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: var(--white);
+            font-size: 1.0em;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.9a14.6%2014.6%200%200%200-20.6%200L146.2%20190.2%2026.1%2069.9a14.6%2014.6%200%200%200-20.6%2020.6L135.9%20220.5a14.6%2014.6%200%200%200%2020.6%200L287%2090.5a14.6%2014.6%200%200%200%200-20.6z%22%2F%3E%3C%2Fsvg%3E');
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            background-size: 15px auto;
+            transition: all var(--transition-speed);
+        }
+
+        .language-selector select:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-color: var(--accent-color);
+        }
+
+        .language-selector select option {
+            background-color: var(--dark-bg);
+            color: var(--white);
+        }
+
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px; /* More spacing */
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .about-image img {
+            width: 380px; /* Larger image */
+            height: 380px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid var(--primary-color); /* Thicker border */
+            box-shadow: var(--shadow-strong); /* Stronger shadow */
+            animation: fadeIn 1.2s ease-out; /* Simple fade in */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .about-text {
+            flex: 1;
+            max-width: 700px;
+            text-align: left;
+            animation: slideInRight 1.2s ease-out; /* Simple slide in */
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+
+        /* Portfolio Section */
+        .portfolio-filters {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .portfolio-filters button {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 25px; /* More padding */
+            border: none;
+            border-radius: var(--border-radius);
+            margin: 0 10px; /* More margin */
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            box-shadow: var(--shadow-light);
+            font-size: 1em;
+        }
+        .portfolio-filters button:hover,
+        .portfolio-filters button.active {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger min-width */
+            gap: 40px; /* More spacing */
+            margin-top: 40px;
+        }
+
+        .portfolio-item {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium); /* Stronger shadow */
+            overflow: hidden;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            text-align: center;
+            padding-bottom: 25px; /* More padding */
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow var(--transition-speed);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px); /* More pronounced lift */
+            box-shadow: var(--shadow-strong);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px; /* Taller images */
+            object-fit: cover;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-item h3 {
+            margin-bottom: 12px;
+            font-size: 1.6em; /* Larger title */
+            color: var(--primary-color);
+        }
+
+        .portfolio-item p {
+            padding: 0 25px;
+            font-size: 1.0em;
+            color: var(--secondary-color);
+            min-height: 60px; /* Ensure consistent height */
+        }
+
+        .portfolio-item .project-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            padding: 10px 25px;
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            transition: all var(--transition-speed);
+            font-size: 0.95em;
+        }
+
+        .portfolio-item .project-link:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: var(--shadow-light);
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        #testimonials h2 {
+            color: var(--white);
+        }
+        #testimonials h2::after {
+            background-color: var(--primary-color);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding-top: 20px;
+        }
+
+        .testimonial-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 35px; /* More padding */
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+        .testimonial-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+        .testimonial-item p {
+            font-style: italic;
+            font-size: 1.15em;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        .testimonial-item .author {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.05em;
+        }
+        .testimonial-item .author span {
+            display: block;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 5px;
+        }
+
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .contact-intro {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+
+        .info-item {
+            background-color: var(--light-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        .info-item i {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .info-item h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        .info-item p, .info-item a {
+            font-size: 1.1em;
+            margin-bottom: 0; /* Remove default p margin */
+            color: var(--text-color);
+            word-break: break-all; /* For long emails/numbers */
+        }
+        .info-item a {
+            font-weight: 500;
+        }
+
+
+        .social-links {
+            margin-top: 40px;
+            margin-bottom: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px; /* Spacing between icons */
+        }
+
+        .social-links a, .social-links span { /* Span for Imo text */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border-radius: 50%;
+            width: 60px; /* Larger icons */
+            height: 60px;
+            font-size: 2.2em; /* Icon size */
+            transition: all var(--transition-speed), transform var(--transition-speed);
+            box-shadow: var(--shadow-light);
+        }
+        .social-links a:hover {
+            transform: translateY(-7px) scale(1.1);
+            box-shadow: var(--shadow-medium);
+            background-color: var(--primary-color); /* Change color on hover */
+        }
+
+        /* Specific social icon colors (optional, but nice) */
+        .social-links a.facebook:hover { background-color: #3b5998; }
+        .social-links a.twitter:hover { background-color: #1da1f2; }
+        .social-links a.linkedin:hover { background-color: #0077b5; }
+        .social-links a.github:hover { background-color: #333; }
+        .social-links a.instagram:hover { background-color: #c13584; }
+        .social-links a.whatsapp:hover { background-color: #25d366; }
+        .social-links a.telegram:hover { background-color: #0088cc; }
+        .social-links a.phone:hover { background-color: var(--accent-color); } /* Use accent for phone */
+
+        /* Style for Imo text */
+        .social-links span {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            font-size: 1em;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            width: auto;
+            height: auto;
+            cursor: default; /* Not clickable like a link */
+            display: flex; /* To center text if needed */
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+
+        .contact-note {
+            font-style: italic;
+            color: var(--secondary-color);
+            margin-top: 40px;
+            font-size: 1.1em;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* More spacing in form */
+            text-align: left;
+            width: 100%; /* Take full width of container */
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 18px; /* More padding */
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            font-size: 1.05em;
+            font-family: 'Roboto', sans-serif;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+        }
+
+        .contact-form button {
+            width: auto;
+            align-self: center;
+            margin-top: 30px;
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 1em;
+            border-top: 5px solid var(--primary-color); /* A nice border */
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1em; /* Reset font size for footer */
+        }
+
+        footer i {
+            color: var(--accent-color); /* Red heart */
+            margin: 0 6px;
+        }
+
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
+            display: none; /* Hidden by default */
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%; /* Make it round */
+            width: 55px; /* Slightly larger */
+            height: 55px;
+            font-size: 2em; /* Larger icon */
+            cursor: pointer;
+            box-shadow: var(--shadow-medium);
+            transition: background-color var(--transition-speed), transform var(--transition-speed), opacity var(--transition-speed);
+            display: flex; /* For centering icon */
+            justify-content: center;
+            align-items: center;
+            opacity: 0; /* Start hidden for animation */
+            pointer-events: none; /* Disable clicks when hidden */
+        }
+
+        #scrollToTopBtn.show {
+            display: flex;
+            opacity: 1;
+            pointer-events: auto; /* Enable clicks when visible */
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px) scale(1.08); /* More pronounced lift and scale */
+            opacity: 0.95;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 4em;
+            }
+            .hero-content p {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 2.8em;
+            }
+            .section-padding {
+                padding: 80px 0;
+            }
+            .about-content {
+                gap: 40px;
+            }
+            .about-image img {
+                width: 320px;
+                height: 320px;
+                border-width: 6px;
+            }
+            .contact-info-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            .social-links a, .social-links span {
+                width: 50px;
+                height: 50px;
+                font-size: 1.8em;
+            }
+            .info-item i {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+                flex-wrap: wrap;
+            }
+
+            .logo {
+                font-size: 1.8em;
+            }
+            .language-selector {
+                margin-right: 0;
+                order: -1; /* Move to top in mobile nav */
+                width: 100%;
+                text-align: center;
+                padding-bottom: 15px;
+                padding-top: 10px; /* Space from top edge in mobile nav */
+            }
+
+            .language-selector select {
+                width: calc(100% - 40px);
+                margin-top: 10px;
+            }
+
+            .burger {
+                display: block;
+                z-index: 1001;
+                margin-left: auto;
+            }
+
+            .nav-links {
+                position: fixed;
+                right: 0;
+                top: 0; /* Or adjust based on your nav height */
+                height: 100vh;
+                width: 75%; /* Wider mobile menu */
+                background-color: var(--dark-bg);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in;
+                padding-top: 100px; /* Space from top for nav items */
+                box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+            }
+
+            .nav-links li {
+                margin: 25px 0;
+                opacity: 0;
+            }
+
+            .nav-active {
+                transform: translateX(0%);
+            }
+
+            .nav-links.nav-active li {
+                opacity: 1;
+                transition: opacity 0.5s ease-in forwards;
+            }
+            .nav-links.nav-active li:nth-child(1) { transition-delay: 0.2s; }
+            .nav-links.nav-active li:nth-child(2) { transition-delay: 0.3s; }
+            .nav-links.nav-active li:nth-child(3) { transition-delay: 0.4s; }
+            .nav-links.nav-active li:nth-child(4) { transition-delay: 0.5s; }
+            .nav-links.nav-active li:nth-child(5) { transition-delay: 0.6s; }
+
+            .toggle .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            .toggle .line2 {
+                opacity: 0;
+            }
+            .toggle .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .hero-content h1 {
+                font-size: 3.5em;
+            }
+            .hero-content p {
+                font-size: 1.3em;
+            }
+
+            h2 {
+                font-size: 2.2em;
+            }
+
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-image {
+                margin-bottom: 25px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .portfolio-filters button {
+                margin: 5px;
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form button {
+                width: 100%;
+            }
+
+            #scrollToTopBtn {
+                width: 48px;
+                height: 48px;
+                font-size: 1.7em;
+                bottom: 25px;
+                right: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 15px;
+            }
+            .logo {
+                font-size: 1.6em;
+            }
+            .hero-content h1 {
+                font-size: 2.8em;
+            }
+            .hero-content p {
+                font-size: 1.1em;
+            }
+            h2 {
+                font-size: 1.9em;
+            }
+            .section-padding {
+                padding: 40px 0;
+            }
+            .social-links a, .social-links span {
+                font-size: 1.8em;
+                width: 45px;
+                height: 45px;
+                gap: 15px;
+            }
+            .language-selector select {
+                width: calc(100% - 30px);
+                font-size: 0.95em;
+            }
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+            .contact-form input,
+            .contact-form textarea {
+                padding: 15px;
+                font-size: 0.95em;
+            }
+            .info-item p, .info-item a {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="home">
+        <nav>
+            <div class="logo">DANIEL TSIGU</div>
+            <ul class="nav-links">
+                <li><a href="#home" data-key="navHome">Home</a></li>
+                <li><a href="#about" data-key="navAbout">About</a></li>
+                <li><a href="#portfolio" data-key="navPortfolio">Portfolio</a></li>
+                <li><a href="#testimonials" data-key="navTestimonials">Testimonials</a></li>
+                <li><a href="#contact" data-key="navContact">Contact</a></li>
+            </ul>
+            <div class="language-selector">
+                <select id="language-switcher" aria-label="Language Selector">
+                    <option value="en" selected>English</option>
+                    <option value="am">አማርኛ (Amharic)</option>
+                    <option value="om">Afaan Oromoo (Oromo)</option>
+                    <option value="ti">ትግርኛ (Tigrinya)</option>
+                    <option value="hi">हिन्दी (Hindi)</option>
+                    <option value="es">Español (Spanish)</option>
+                    <option value="fr">Français (French)</option>
+                    <option value="ar">العربية (Arabic)</option>
+                    <option value="zh">中文 (Chinese)</option>
+                </select>
+            </div>
+            <div class="burger" aria-label="Toggle navigation menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <h1 data-key="heroGreeting">Hi, I'm Daniel tsigu</h1>
+            <p data-key="heroSubtitle">A passionate Web Developer | Designer | Content Creator</p>
+            <a href="#portfolio" class="cta-button" data-key="heroCta">View My Work</a>
+        </div>
+    </header>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 data-key="aboutTitle">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="photo_2024-06-27_21-17-41.jpg" alt="DANIEL TSIGU Photo" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <p data-key="aboutP1">
+                        Hello! I'm DANIEL TSIGU, a dedicated professional with a strong background in web development and digital design. Based in Addis Ababa, Ethiopia, I specialize in creating responsive, user-friendly, and engaging web experiences.
+                    </p>
+                    <p data-key="aboutP2">
+                        My journey began 5 years ago, driven by a passion for technology and a desire to build innovative solutions. I'm proficient in HTML, CSS, JavaScript, and various modern frameworks. I also have a keen eye for UI/UX principles, ensuring that every project I undertake is not only functional but also aesthetically pleasing and intuitive.
+                    </p>
+                    <p data-key="aboutP3">
+                        When I'm not coding, you can find me exploring new design trends, contributing to open-source projects, or enjoying the vibrant culture of Ethiopia. I'm always eager to connect with like-minded individuals and collaborate on exciting new ventures.
+                    </p>
+                    <a href="danieltsigu_Resume.pdf" download class="cta-button secondary" data-key="aboutResumeCta">Download Resume <i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section-padding bg-light">
+        <div class="container">
+            <h2 data-key="portfolioTitle">My Portfolio</h2>
+            <div class="portfolio-filters">
+                <button data-filter="all" class="active" data-key="filterAll">All</button>
+                <button data-filter="web" data-key="filterWeb">Web Development</button>
+                <button data-filter="design" data-key="filterDesign">UI/UX Design</button>
+                <button data-filter="mobile" data-key="filterMobile">Mobile Apps</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <img src="https://source.unsplash.com/random/400x250/?ecommerce,website,tech" alt="E-commerce Platform Project" loading="lazy">
+                    <h3 data-key="project1Title">E-commerce Platform</h3>
+                    <p data-key="project1Desc">A responsive e-commerce platform built with modern web technologies, focusing on user experience and scalable architecture.</p>
+                    <a href="https://example.com/project1" class="project-link" target="_blank" data-key="projectLink">View Project <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <img src="https://source.unsplash.com/random/400x250/?blog,design,ui" alt="Personal Blog & CMS Project" loading="lazy">
+                    <h3 data-key="project2Title">Personal Blog & CMS</h3>
+                    <p data-key="project2Desc">A personal blogging website with custom CMS integration and a complete UI/UX redesign for improved readability.</p>
+                    <a href="https://example.com/project2" class="project-link" target="_blank" data-key="projectLink">View Project <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="portfolio-item" data-category="mobile">
+                    <img src="https://source.unsplash.com/random/400x250/?mobileapp,location,services" alt="Local Service Finder App Project" loading="lazy">
+                    <h3 data-key="project3Title">Local Service Finder App</h3>
+                    <p data-key="project3Desc">A mobile-first web application for local service discovery, featuring geolocation and review functionalities.</p>
+                    <a href="https://example.com/project3" class="project-link" target="_blank" data-key="projectLink">View Project <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <img src="https://source.unsplash.com/random/400x250/?dashboard,analytics,data" alt="Data Visualization Dashboard Project" loading="lazy">
+                    <h3 data-key="project4Title">Data Visualization Dashboard</h3>
+                    <p data-key="project4Desc">Developed a custom, interactive dashboard for real-time data visualization and comprehensive reporting.</p>
+                    <a href="https://example.com/project4" class="project-link" target="_blank" data-key="projectLink">View Project <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <img src="https://source.unsplash.com/random/400x250/?fintech,app,interface" alt="Fintech App UI/UX Project" loading="lazy">
+                    <h3 data-key="project5Title">Fintech App UI/UX</h3>
+                    <p data-key="project5Desc">Designed a user-friendly and secure interface for a fintech application, enhancing user engagement and trust.</p>
+                    <a href="https://example.com/project5" class="project-link" target="_blank" data-key="projectLink">View Project <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <img src="https://source.unsplash.com/random/400x250/?landingpage,marketing,web" alt="Marketing Landing Page Project" loading="lazy">
+                    <h3 data-key="project6Title">Marketing Landing Page</h3>
+                    <p data-key="project6Desc">Created a high-converting marketing landing page with A/B testing capabilities and lead generation forms.</p>
+                    <a href="https://example.com/project6" class="project-link" target="_blank" data-key="projectLink">View Project <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section-padding">
+        <div class="container">
+            <h2 data-key="testimonialsTitle">What Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <p data-key="testimonial1Text">"John is an exceptional developer. He delivered a high-quality website ahead of schedule and was a pleasure to work with. Highly recommended!"</p>
+                    <div class="author" data-key="testimonial1Author">Jane Smith <span>CEO, Tech Solutions</span></div>
+                </div>
+                <div class="testimonial-item">
+                    <p data-key="testimonial2Text">"The design work John did for our app was truly outstanding. Intuitive, beautiful, and perfectly captured our brand's essence."</p>
+                    <div class="author" data-key="testimonial2Author">Bereket Lemma <span>Founder, EthioApp</span></div>
+                </div>
+                <div class="testimonial-item">
+                    <p data-key="testimonial3Text">"A true professional! John's attention to detail and commitment to excellence made our project a great success. We'll definitely work with him again."</p>
+                    <div class="author" data-key="testimonial3Author">Sarah Chen <span>Marketing Director, Global Corp</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container contact-content">
+            <h2 data-key="contactTitle">Get In Touch</h2>
+            <p class="contact-intro" data-key="contactIntro">I'm always open to new opportunities, collaborations, and conversations. Feel free to reach out!</p>
+
+            <div class="contact-info-grid">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3 data-key="contactEmailLabel">Email:</h3>
+                    <p><a href="mailto:johndoe@example.com">danieltsigu49@gmail.com</a></p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3 data-key="contactPhoneLabel">Phone:</h3>
+                    <p><a href="tel:+251986079581">+251 986079581</a></p>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3 data-key="contactWhatsAppLabel">WhatsApp:</h3>
+                    <p><a href="https://wa.me/251986079581" target="_blank">+251 986079581</a></p>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-telegram-plane"></i>
+                    <h3 data-key="contactTelegramLabel">Telegram:</h3>
+                    <p><a href="https://t.me/yourtelegramusername" target="_blank">@dani19t</a></p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-comment-dots"></i>
+                    <h3 data-key="contactImoLabel">Imo:</h3>
+                    <p data-key="contactImoNumber">+251 986079581</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3 data-key="contactLocationLabel">Location:</h3>
+                    <p>Addis Ababa, Ethiopia</p>
+                </div>
+            </div>
+
+            <h3 class="contact-note" data-key="contactSocialMediaTitle">Connect with me on social media:</h3>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub" class="github"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://facebook.com/yourprofile" target="_blank" aria-label="Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/251986079581" target="_blank" aria-label="WhatsApp" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/yourtelegramusername" target="_blank" aria-label="Telegram" class="telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="tel:+251986079581" aria-label="Phone Call" class="phone"><i class="fas fa-phone-alt"></i></a>
+            </div>
+
+            <p class="contact-note" data-key="contactFormNote">Or fill out the form below:</p>
+            <form class="contact-form" action="#" method="POST">
+                <input type="text" name="name" data-key="formNamePlaceholder" placeholder="Your Name" required aria-label="Your Name">
+                <input type="email" name="email" data-key="formEmailPlaceholder" placeholder="Your Email" required aria-label="Your Email">
+                <textarea name="message" rows="6" data-key="formMessagePlaceholder" placeholder="Your Message" required aria-label="Your Message"></textarea>
+                <button type="submit" class="cta-button" data-key="formSubmitBtn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p data-key="footerCopyright">&copy; <span id="currentYear"></span> Daniel TSIGU. All rights reserved.</p>
+            <p data-key="footerBuiltWith">Built with <i class="fas fa-heart"></i> in Ethiopia.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Go to top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // --- Language Localization Data ---
+            const translations = {
+                en: {
+                    pageTitle: "Daniel Tsigu - My Personal Portfolio",
+                    navHome: "Home",
+                    navAbout: "About",
+                    navPortfolio: "Portfolio",
+                    navTestimonials: "Testimonials",
+                    navContact: "Contact",
+                    heroGreeting: "Hi, I'm Daniel Tigu",
+                    heroSubtitle: "A passionate Web Developer | Designer | Content Creator",
+                    heroCta: "View My Work",
+                    aboutTitle: "About Me",
+                    aboutP1: "Hello! I'm Daniel Tsigu, a dedicated professional with a strong background in web development and digital design. Based in Addis Ababa, Ethiopia, I specialize in creating responsive, user-friendly, and engaging web experiences.",
+                    aboutP2: "My journey began 5 years ago, driven by a passion for technology and a desire to build innovative solutions. I'm proficient in HTML, CSS, JavaScript, and various modern frameworks. I also have a keen eye for UI/UX principles, ensuring that every project I undertake is not only functional but also aesthetically pleasing and intuitive.",
+                    aboutP3: "When I'm not coding, you can find me exploring new design trends, contributing to open-source projects, or enjoying the vibrant culture of Ethiopia. I'm always eager to connect with like-minded individuals and collaborate on exciting new ventures.",
+                    aboutResumeCta: "Download Resume",
+                    portfolioTitle: "My Portfolio",
+                    filterAll: "All",
+                    filterWeb: "Web Development",
+                    filterDesign: "UI/UX Design",
+                    filterMobile: "Mobile Apps",
+                    project1Title: "E-commerce Platform",
+                    project1Desc: "A responsive e-commerce platform built with modern web technologies, focusing on user experience and scalable architecture.",
+                    project2Title: "Personal Blog & CMS",
+                    project2Desc: "A personal blogging website with custom CMS integration and a complete UI/UX redesign for improved readability.",
+                    project3Title: "Local Service Finder App",
+                    project3Desc: "A mobile-first web application for local service discovery, featuring geolocation and review functionalities.",
+                    project4Title: "Data Visualization Dashboard",
+                    project4Desc: "Developed a custom, interactive dashboard for real-time data visualization and comprehensive reporting.",
+                    project5Title: "Fintech App UI/UX",
+                    project5Desc: "Designed a user-friendly and secure interface for a fintech application, enhancing user engagement and trust.",
+                    project6Title: "Marketing Landing Page",
+                    project6Desc: "Created a high-converting marketing landing page with A/B testing capabilities and lead generation forms.",
+                    projectLink: "View Project",
+                    testimonialsTitle: "What Clients Say",
+                    testimonial1Text: "\"John is an exceptional developer. He delivered a high-quality website ahead of schedule and was a pleasure to work with. Highly recommended!\"",
+                    testimonial1Author: "Jane Smith <span>CEO, Tech Solutions</span>",
+                    testimonial2Text: "\"The design work John did for our app was truly outstanding. Intuitive, beautiful, and perfectly captured our brand's essence.\"",
+                    testimonial2Author: "Bereket Lemma <span>Founder, EthioApp</span>",
+                    testimonial3Text: "\"A true professional! John's attention to detail and commitment to excellence made our project a great success. We'll definitely work with him again.\"",
+                    testimonial3Author: "Sarah Chen <span>Marketing Director, Global Corp</span>",
+                    contactTitle: "Get In Touch",
+                    contactIntro: "I'm always open to new opportunities, collaborations, and conversations. Feel free to reach out!",
+                    contactEmailLabel: "Email:",
+                    contactPhoneLabel: "Phone:",
+                    contactWhatsAppLabel: "WhatsApp:",
+                    contactTelegramLabel: "Telegram:",
+                    contactImoLabel: "Imo:",
+                    contactImoNumber: "+251 986079581",
+                    contactLocationLabel: "Location:",
+                    contactSocialMediaTitle: "Connect with me on social media:",
+                    contactFormNote: "Or fill out the form below:",
+                    formNamePlaceholder: "Your Name",
+                    formEmailPlaceholder: "Your Email",
+                    formMessagePlaceholder: "Your Message",
+                    formSubmitBtn: "Send Message",
+                    footerCopyright: "&copy; <span id='currentYear'></span> Daniel Tsigu. All rights reserved.",
+                    footerBuiltWith: "Built with ❤️ in Ethiopia."
+                },
+                am: { // Amharic - Using Google Translate for example, get professional translation!
+                    pageTitle: "Daniel Tsigu - የእኔ የግል ፖርትፎሊዮ",
+                    navHome: "ዋና ገጽ",
+                    navAbout: "ስለ እኔ",
+                    navPortfolio: "ፖርትፎሊዮ",
+                    navTestimonials: "ምስክርነቶች",
+                    navContact: "ያግኙኝ",
+                    heroGreeting: "ሰላም፣ እኔ Daniel Tsigu ነኝ",
+                    heroSubtitle: "ቁርጠኛ የድር ገንቢ | ዲዛይነር | ይዘት ፈጣሪ",
+                    heroCta: "ስራዎቼን ይመልከቱ",
+                    aboutTitle: "ስለ እኔ",
+                    aboutP1: "ሰላም! እኔ Daniel Tsigu ነኝ፣ የድር ልማት እና ዲጂታል ዲዛይን ጠንካራ ዳራ ያለው ቁርጠኛ ባለሙያ። በአዲስ አበባ፣ ኢትዮጵያ እኖራለሁ፣ ምላሽ ሰጪ፣ ለተጠቃሚ ምቹ እና ማራኪ የድር ልምዶችን በመፍጠር ላይ እሰራለሁ።",
+                    aboutP2: "የእኔ ጉዞ የጀመረው ከ5 ዓመታት በፊት ነው፣ በቴክኖሎጂ ፍቅር እና አዳዲስ መፍትሄዎችን ለመገንባት ባለው ፍላጎት። እኔ በኤችቲኤምኤል፣ ሲኤስኤስ፣ ጃቫስክሪፕት እና በተለያዩ ዘመናዊ ማዕቀፎች ውስጥ እችላለሁ። በተጨማሪም እኔ UI/UX መርሆዎች ላይ ጥሩ እይታ አለኝ፣ የምሰራው እያንዳንዱ ፕሮጀክት ተግባራዊ ብቻ ሳይሆን ውበት ያለው እና ቀላል መሆኑን አረጋግጣለሁ።",
+                    aboutP3: "ኮድ ሳልሰራ ስሆን፣ አዳዲስ የንድፍ አዝማሚያዎችን መቃኘት፣ ለክፍት ምንጭ ፕሮጀክቶች አስተዋጽኦ ማድረግ፣ ወይም የኢትዮጵያን ደማቅ ባህል መደሰት እችላለሁ። ሁልጊዜም ተመሳሳይ አስተሳሰብ ካላቸው ግለሰቦች ጋር ለመገናኘት እና በአስደሳች አዳዲስ ስራዎች ላይ ለመተባበር እጓጓለሁ።",
+                    aboutResumeCta: "የሥራ መረጃዬን ያውርዱ",
+                    portfolioTitle: "የእኔ ፖርትፎሊዮ",
+                    filterAll: "ሁሉም",
+                    filterWeb: "የድር ልማት",
+                    filterDesign: "UI/UX ዲዛይን",
+                    filterMobile: "የሞባይል መተግበሪያዎች",
+                    project1Title: "የኢ-ኮሜርስ መድረክ",
+                    project1Desc: "የተጠቃሚን ልምድ እና ሚዛናዊ አርክቴክቸር ላይ ትኩረት በማድረግ በዘመናዊ የድር ቴክኖሎጂዎች የተገነባ ምላሽ ሰጪ ኢ-ኮሜርስ መድረክ።",
+                    project2Title: "የግል ብሎግ እና ሲኤምኤስ",
+                    project2Desc: "የተሻለ ተነባቢነት ለማግኘት ብጁ ሲኤምኤስ ውህደት እና የተሟላ UI/UX ዲዛይን ያለው የግል ብሎግ ድር ጣቢያ።",
+                    project3Title: "የአካባቢያዊ አገልግሎት ፈላጊ መተግበሪያ",
+                    project3Desc: "የጂኦሎኬሽን እና ግምገማ ተግባራትን የያዘ የአካባቢያዊ አገልግሎት ፍለጋ የሞባይል-መጀመሪያ የድር መተግበሪያ።",
+                    project4Title: "የውሂብ እይታ ዳሽቦርድ",
+                    project4Desc: "ለእውነተኛ ጊዜ የውሂብ እይታ እና አጠቃላይ ሪፖርት ማቅረቢያ ብጁ፣ መስተጋብራዊ ዳሽቦርድ አዘጋጅቷል።",
+                    project5Title: "የፊንቴክ መተግበሪያ UI/UX",
+                    project5Desc: "ለፊንቴክ መተግበሪያ ለተጠቃሚ ምቹ እና አስተማማኝ የሆነ በይነገጽ ነድፏል፣ የተጠቃሚ ተሳትፎ እና እምነትን አሳድጓል።",
+                    project6Title: "የግብይት ማረፊያ ገጽ",
+                    project6Desc: "የ A/B የሙከራ ችሎታዎች እና የእርሳስ ማመንጫ ቅጾች ያሉት ከፍተኛ-ተለዋዋጭ የግብይት ማረፊያ ገጽ ተፈጠረ።",
+                    projectLink: "ፕሮጀክት ይመልከቱ",
+                    testimonialsTitle: "ደንበኞች ምን ይላሉ",
+                    testimonial1Text: "\"ጆን ልዩ ገንቢ ነው። ከፍተኛ ጥራት ያለው ድር ጣቢያ ከታቀደለት ጊዜ ቀድሞ አቅርቧል እና ከእሱ ጋር አብሮ መስራት ያስደስታል። በጣም የሚመከር ነው!\"",
+                    testimonial1Author: "ጄን ስሚዝ <span>ዋና ስራ አስፈፃሚ፣ ቴክ ሶሉሽንስ</span>",
+                    testimonial2Text: "\"ጆን ለመተግበሪያችን የሰራው የንድፍ ስራ በእውነት አስደናቂ ነበር። ግልጽ፣ ውብ እና የምርታችንን ይዘት በትክክል ያዘ።\"",
+                    testimonial2Author: "በረከት ለምሀ <span>መስራች፣ ኢትዮአፕ</span>",
+                    testimonial3Text: "\"እውነተኛ ባለሙያ! የጆን ዝርዝር ትኩረት እና ለላቀ ውጤት ያለው ቁርጠኝነት ፕሮጀክታችንን ትልቅ ስኬት አድርጎታል። በእርግጠኝነት ከእሱ ጋር እንደገና እንሰራለን።\"",
+                    testimonial3Author: "ሳራ ቼን <span>የግብይት ዳይሬክተር፣ ግሎባል ኮርፕ</span>",
+                    contactTitle: "ያግኙኝ",
+                    contactIntro: "ሁልጊዜም ለአዳዲስ እድሎች፣ ትብብሮች እና ውይይቶች ክፍት ነኝ። ለማነጋገር አያመንቱ!",
+                    contactEmailLabel: "ኢሜይል:",
+                    contactPhoneLabel: "ስልክ:",
+                    contactWhatsAppLabel: "ዋትስአፕ:",
+                    contactTelegramLabel: "ቴሌግራም:",
+                    contactImoLabel: "ኢሞ:",
+                    contactImoNumber: "+251 986079581",
+                    contactLocationLabel: "ቦታ:",
+                    contactSocialMediaTitle: "በማህበራዊ ሚዲያ ያግኙኝ:",
+                    contactFormNote: "ወይም ከዚህ በታች ያለውን ቅጽ ይሙሉ:",
+                    formNamePlaceholder: "የእርስዎ ስም",
+                    formEmailPlaceholder: "የእርስዎ ኢሜይል",
+                    formMessagePlaceholder: "የእርስዎ መልእክት",
+                    formSubmitBtn: "መልእክት ይላኩ",
+                    footerCopyright: "&copy; <span id='currentYear'></span> Daniel Tsigu። ሁሉም መብቶች የተጠበቁ ናቸው።",
+                    footerBuiltWith: "በ ❤️ ኢትዮጵያ ውስጥ የተሰራ።"
+                },
+                om: { // Afan Oromo (Oromo) - Using Google Translate for example, get professional translation!
+                    pageTitle: "Daniel Tsigu - Porchifooliyoo Kiyya Dhuunfaa",
+                    navHome: "Fuula Duraa",
+                    navAbout: "Waa'ee Koo",
+                    navPortfolio: "Porchifooliyoo",
+                    navTestimonials: "Dhugaa Baatii",
+                    navContact: "Na Qunnam",
+                    heroGreeting: "Nagaa! Ani Daniel Tsiggu dha",
+                    heroSubtitle: "Hojiiwwan Weebii | Dizaynerii | Nama Qabiyyee Hojjetu Fedhii Guddaa Qabu",
+                    heroCta: "Hojii Koo Ilaali",
+                    aboutTitle: "Waa'ee Koo",
+                    aboutP1: "Nagaa! Ani Daniel Tsiggu dha, hojjetaa ogummaa qabu, weebii gabbisuu fi dizayinii dijitaalaa irratti muuxannoo cimaa qabu. Godina Finfinnee, Itoophiyaatti kan jiraadhu, ani muuxannoowwan weebii deebii kennan, salphaa fi nama hawwatan uumuu irratti xiyyeeffadha.",
+                    aboutP2: "Imalli koo waggaa 5 dura jalqabe, fedhii teeknoolojii fi hawwii furmaatoota haaraa ijaaruu qabuun. Ani HTML, CSS, JavaScript, fi furmaatoota ammayyaa adda addaa irratti gahee guddaa qaba. Qajeelcha UI/UX irrattis ija qaba, pirojektiin ani hojjedhu hundi hojii qofa osoo hin taane, bareedaa fi salphaa ta'uu isaa mirkaneessa.",
+                    aboutP3: "Yoo ani koodii hin barreessine, ani dhaamsa dizayinii haaraa qorachuu, pirojektoota maddii banaa irratti gumaachuu, ykn aadaa Itoophiyaa miidhagaa ta'e irraa bohaaruun argama. Ani yeroo hunda namoota yaada walfakkaataa qaban waliin walqunnamuu fi hojiiwwan haaraa fi nama bohaarsan irratti waliin hojjechuuf fedhii qaba.",
+                    aboutResumeCta: "Seen-odeeffannoo Buusi",
+                    portfolioTitle: "Porchifooliyoo Kiyya",
+                    filterAll: "Hunda",
+                    filterWeb: "Gabbisa Weebii",
+                    filterDesign: "Dizayinii UI/UX",
+                    filterMobile: "Applikaashenii Moobayilii",
+                    project1Title: "Dirree E-Commerce",
+                    project1Desc: "Dhaamsa e-commerce deebii kennu kan teeknooloojiiwwan weebii ammayyaa fi muuxannoo fayyadamaa fi caasaa guddisuu irratti xiyyeeffatuun ijaarame.",
+                    project2Title: "Biloogii Dhuunfaa fi CMS",
+                    project2Desc: "Hojiiwwan biloogii dhuunfaa kan sagantaa CMS ofii qabu fi hojii dizayinii UI/UX kan dubbisuu cimsuuf guutummaatti jijjiirame.",
+                    project3Title: "Applikaashenii Tajaajila Naannoo Argachuu",
+                    project3Desc: "Applikaashenii weebii moobayilii-duraa kan tajaajila naannoo argachuuf hojjetame, kan funksiyonii teessoofi fi gamaaggamaa of keessaa qabu.",
+                    project4Title: "Daashboordii Mul'ina Odeeffannoo",
+                    project4Desc: "Daashboordii ofii, odeeffannoo yeroo sanatti mul'isuu fi gabaasa guutuu kennuuf hojjetame.",
+                    project5Title: "Dizayinii UI/UX Applikaashenii Fintech",
+                    project5Desc: "Applikaashenii fintech, kan fayyadamaadhaaf salphaa fi nageenya qabu, kan hirmaannaa fayyadamaa fi amanamummaa guddisuuf hojjetame.",
+                    project6Title: "Fuula Marketingii",
+                    project6Desc: "Fuula marketingii jijjiirraa guddaa qabu kan dandeettii qorannoo A/B fi foormiiwwan galmee qabu hojjetameera.",
+                    projectLink: "Pirojektii Ilaali",
+                    testimonialsTitle: "Maamillootni Maal Jedhan",
+                    testimonial1Text: "\"John gabbisaa addaa dha. Weebii qulqullina olaanaa qabu yeroo isaa dura xumuree jira, waliin hojjechuun nama gammachiisa. Baay'ee gorfamaadha!\"",
+                    testimonial1Author: "Jane Smith <span>CEO, Tech Solutions</span>",
+                    testimonial2Text: "\"Hojii dizayinii John appii keenyaaf hojjete dhuguma nama dinqisiisaa ture. Salphaa, bareedaa fi dhaamsa keenya guutummaatti qabateera.\"",
+                    testimonial2Author: "Bereket Lemma <span>Hojii Jalqabaa, EthioApp</span>",
+                    testimonial3Text: "\"Hojjetaa dhugaa! Xiyyeeffannaan John qubeellaa irratti fi itti gaafatamummaan isaa pirojektii keenya milkaa'ina guddaa akka argatu godheera. Irra deebinee waliin hojjechuuf mirkanaa'oo dha.\"",
+                    testimonial3Author: "Sarah Chen <span>Dairektara Marketingii, Global Corp</span>",
+                    contactTitle: "Na Qunnam",
+                    contactIntro: "Yeroo hunda carraawwan haaraa, waliin hojjechuufi fi mariiwwaniif banaadha. Na qunnamuuf hin sodaatin!",
+                    contactEmailLabel: "Imeelii:",
+                    contactPhoneLabel: "Bilbila:",
+                    contactWhatsAppLabel: "WhatsApp:",
+                    contactTelegramLabel: "Telegram:",
+                    contactImoLabel: "Imo:",
+                    contactImoNumber: "+251 986079581",
+                    contactLocationLabel: "Bakka:",
+                    contactSocialMediaTitle: "Miidiyaa hawaasaa irratti na qunnam:",
+                    contactFormNote: "Yookaan foormii gadii guuta:",
+                    formNamePlaceholder: "Maqaa Kee",
+                    formEmailPlaceholder: "Imeelii Kee",
+                    formMessagePlaceholder: "Ergaa Kee",
+                    formSubmitBtn: "Ergaa Ergi",
+                    footerCopyright: "&copy; <span id='currentYear'></span> Daniel Tsigu. Mirgoota Hundinuu Eegamaa Dha.",
+                    footerBuiltWith: "Itoophiyaatti ❤️ hojjetame."
+                },
+                 ti: { // Tigrinya (ትግርኛ) - Using Google Translate for example, get professional translation!
+                    pageTitle: "Daniel Tsigu - ብሕታዊ ፖርትፎልዮይ",
+                    navHome: "መበገሲ",
+                    navAbout: "ብዛዕባይ",
+                    navPortfolio: "ፖርትፎልዮ",
+                    navTestimonials: "ምስክርነታት",
+                    navContact: "ተወከሱኒ",
+                    heroGreeting: "ሰላም፣ ኣነ ጆን ዶ እየ",
+                    heroSubtitle: "ብዕቱብ ዝሰርሕ ወብ ዲቨሎፐር | ዲዛይነር | መፍጠርን ትሕዝቶን",
+                    heroCta: "ስራሐይ ረአ",
+                    aboutTitle: "ብዛዕባይ",
+                    aboutP1: "ሰላም! ኣነ ጆን ዶ እየ፣ ኣብ ምዕባለ ወብን ዲጂታላዊ ዲዛይንን ሰፊሕ ተሞክሮ ዘለዎ ብዕቱብ ዝሰርሕ ሰብ ሞያ። ኣብ ኣዲስ ኣበባ፣ ኢትዮጵያ እነብር፣ ኣብ ምጥያሽ ምላሽ ዝህቡ፣ ንተጠቃሚ ዝምችኡን ኣቓልቦ ዝስሕቡን ወብ ተሞክሮታት እምኩሕ።",
+                    aboutP2: "ጉዕዞይ ቅድሚ 5 ዓመት እዩ ጀሚሩ፣ ብፍቕሪ ቴክኖሎጂን ንሓደስቲ ፍታሓት ምንፃፍን ዝተደፋፍአ። ኣብ HTML፣ CSS፣ JavaScript፣ ከምኡ’ውን ኣብ ዝተፈላለዩ ዘመናውያን ኣገባባት ብሉጽ እየ። እሞኩሕ ኩሉ ዝሰርሖ ፕሮጀክት ስራሕ ጥራሕ ዘይኮነ፡ ብሉጽ ውጽኢት ዘለዎን ብቐሊሉ ዝጥቀመሉን ምዃኑ ንምርግጋፅ፡ ኣብ UI/UX ስነ-ምግባራት ብጣዕሚ እጥምት።",
+                    aboutP3: "ኮድ ክጽሕፍ ከለኹ፣ ንሓደስቲ ቅዲ ዲዛይን ምምርማር፣ ኣብ ምንጪ ዝተኸፍቱ ፕሮጀክትታት ምትሕብባር፣ ወይ ድማ ብደስ ዝብል ባህሊ ኢትዮጵያ ምሕጎስ እፈቱ። ምስ ዝተመሳሰሉ ሰባት ክራኸብን ኣብ ሓደስቲን ኣቓልቦ ዝስሕቡን ዕማማት ክተሓባበርን ድማ ኩሉ ግዜ ዕቱብ ፍትወት ኣለኒ።",
+                    aboutResumeCta: "履歴書をダウンロード",
+                    portfolioTitle: "ፖርትፎልዮይ",
+                    filterAll: "ኩሉ",
+                    filterWeb: "ምዕባለ ወብ",
+                    filterDesign: "UI/UX ዲዛይን",
+                    filterMobile: "ሞባይል ኣፕሊኬሽን",
+                    project1Title: "መድረኽ ኢ-ኮሜርስ",
+                    project1Desc: "ብዘመናውያን ቴክኖሎጂታት ወብ ዝተሰርሐ ምላሽ ዝህብ መድረኽ ኢ-ኮሜርስ፣ ኣብ ተሞክሮ ተጠቃምን ዝድየብ ኣርክቴክቸርን ዘተኮረ።",
+                    project2Title: "ብሕታዊ ብሎግን ሲኤምኤስን",
+                    project2Desc: "ብብሕታዊ ሲኤምኤስ ውህደት ዝተሰርሐ ብሕታዊ ወብሳይት ብሎግን ንምምሕያሽ ንባብ ዝተዓለመ ምሉእ UI/UX ንድፊ ምልውዋጥን።",
+                    project3Title: "ሞባይል ኣፕሊኬሽን ንምርካብ ምምሕዳር ኣገልግሎት",
+                    project3Desc: "ንኣገልግሎት ንምርካብ ዝውዕል ሞባይል-ቀዳማይ ወብ ኣፕሊኬሽን፣ ከምኡ’ውን ተግባራት ጂኦሎኬሽንን ድገምን ዘለዎ።",
+                    project4Title: "ዳሽቦርድ ንምርአይ ዳታ",
+                    project4Desc: "ንቕጽበታዊ ምርኣይ ዳታን ንምሉእ ጸብጻብን ዝተሰርሐ ብሕታዊ፣ ተንቀሳቓሲ ዳሽቦርድ ኣማዕቢሉን።",
+                    project5Title: "Fintech App UI/UX",
+                    project5Desc: "ንFintech ኣፕሊኬሽን ንተጠቃሚ ዝምችእን ውሑስን በይነገጽ ነዲፉ፣ ምትእስሳር ተጠቃምን እምነትን ኣመሓይሹ።",
+                    project6Title: "ገጽ ንግዲ",
+                    project6Desc: "ምስ A/B መርመራን ቅጥዕታት ምርካብ መርበብ ሓበሬታን ዝሓዘሉ ልዑል ምትሕልላፍ ዘለዎ ገጽ ንግዲ ተፈጢሩ።",
+                    projectLink: "ፕሮጀክት ረአ",
+                    testimonialsTitle: "ደንበኛታት እንታይ ይብሉ",
+                    testimonial1Text: "\"ጆን ብሉጽ ዲቨሎፐር እዩ። ቅድሚ እዋኑ ብሉጽ ወብሳይት ኣቕሪቡ፣ ምስኡ ምሰርሕ ድማ ሕጉስ እዩ። ብጣዕሚ ዝምከር!\"",
+                    testimonial1Author: "ጄን ስሚዝ <span>ዋና ስራሕ ፈጻሚ፣ ቴክ ሶሉሽንስ</span>",
+                    testimonial2Text: "\"ጆን ንኣፕና ዝገበሮ ዲዛይን ስራሕ ብሓቂ ዝገርም ነይሩ። ንጹር፣ ጽቡቕን ንብረንድና ብልክዕ ዝገልጽን።\"",
+                    testimonial2Author: "በረኸት ለማ <span>መስራቲ፣ ኢትዮኣፕ</span>",
+                    testimonial3Text: "\"ሓቀኛ ፕሮፌሽናል! ንዝርዝራት ዘለዎ ዕቱብነት ጆንን ንልዑልነት ዘለዎ ቁርጽናን ፕሮጀክትና ዓቢ ዓወት ከምዝረክብ ገይርዎ። ንሱ ምስናይ ምርግጋጽ ድጋሚ ምስኡ ክንሰርሕ ኢና።\"",
+                    testimonial3Author: "ሳራ ቼን <span>ዳይሬክተር ግብይት፣ ግሎባል ኮርፕ</span>",
+                    contactTitle: "ተወከሱኒ",
+                    contactIntro: "ንሓደስቲ ዕድላት፣ ምትሕብባርን ምይይጥን ኩሉ ግዜ ክፉት እየ። ብዘይ ገለ ስግኣት ተወከሱኒ!",
+                    contactEmailLabel: "ኢመይለ:",
+                    contactPhoneLabel: "ስልኪ:",
+                    contactWhatsAppLabel: "ዋትስኣፕ:",
+                    contactTelegramLabel: "ቴሌግራም:",
+                    contactImoLabel: "ኢሞ:",
+                    contactImoNumber: "+251 986079581",
+                    contactLocationLabel: "ቦታ:",
+                    contactSocialMediaTitle: "ኣብ ማሕበራዊ ሚድያ ተወከሱኒ:",
+                    contactFormNote: "ወይ ድማ ነቲ ታሕቲ ዘሎ ቅጥዒ ምላእ:",
+                    formNamePlaceholder: "ስምካ",
+                    formEmailPlaceholder: "ኢመይልካ",
+                    formMessagePlaceholder: "መልእክትካ",
+                    formSubmitBtn: "መልእኽቲ ስደድ",
+                    footerCopyright: "&copy; <span id='currentYear'></span> Daniel Tsigu። ኩሉ መሰላት ዝተሓለወ እዩ።",
+                    footerBuiltWith: "ብ ❤️ ኣብ ኢትዮጵያ ዝተሰርሐ።"
+                },
+                hi: { // Hindi (हिन्दी) - Using Google Translate for example, get professional translation!
+                    pageTitle: "जॉन डो - मेरा व्यक्तिगत पोर्टफोलियो",
+                    navHome: "होम",
+                    navAbout: "मेरे बारे में",
+                    navPortfolio: "पोर्टफोलियो",
+                    navTestimonials: "प्रशंसापत्र",
+                    navContact: "संपर्क",
+                    heroGreeting: "नमस्ते, मैं जॉन डो हूँ",
+                    heroSubtitle: "एक जुनूनी वेब डेवलपर | डिजाइनर | सामग्री निर्माता",
+                    heroCta: "मेरा काम देखें",
+                    aboutTitle: "मेरे बारे में",
+                    aboutP1: "नमस्ते! मैं जॉन डो हूँ, वेब डेवलपमेंट और डिजिटल डिज़ाइन में मजबूत पृष्ठभूमि वाला एक समर्पित पेशेवर। अदीस अबाबा, इथियोपिया में स्थित, मैं प्रतिक्रियाशील, उपयोगकर्ता के अनुकूल और आकर्षक वेब अनुभव बनाने में माहिर हूँ।",
+                    aboutP2: "मेरी यात्रा 5 साल पहले शुरू हुई थी, जो प्रौद्योगिकी के प्रति जुनून और नवीन समाधान बनाने की इच्छा से प्रेरित थी। मैं HTML, CSS, JavaScript और विभिन्न आधुनिक फ्रेमवर्क में कुशल हूँ। मेरी UI/UX सिद्धांतों पर भी गहरी नज़र है, यह सुनिश्चित करते हुए कि मैं जो भी परियोजना करता हूँ वह न केवल कार्यात्मक हो बल्कि सौंदर्य की दृष्टि से भी मनभावन और सहज हो।",
+                    aboutP3: "जब मैं कोडिंग नहीं कर रहा होता हूँ, तो आप मुझे नई डिज़ाइन प्रवृत्तियों की खोज करते हुए, ओपन-सोर्स परियोजनाओं में योगदान करते हुए, या इथियोपिया की जीवंत संस्कृति का आनंद लेते हुए पा सकते हैं। मैं हमेशा समान विचारधारा वाले व्यक्तियों से जुड़ने और रोमांचक नए उद्यमों पर सहयोग करने के लिए उत्सुक रहता हूँ।",
+                    aboutResumeCta: "रिज्यूम डाउनलोड करें",
+                    portfolioTitle: "मेरा पोर्टफोलियो",
+                    filterAll: "सभी",
+                    filterWeb: "वेब डेवलपमेंट",
+                    filterDesign: "UI/UX डिज़ाइन",
+                    filterMobile: "मोबाइल ऐप्स",
+                    project1Title: "ई-कॉमर्स प्लेटफॉर्म",
+                    project1Desc: "आधुनिक वेब तकनीकों के साथ निर्मित एक प्रतिक्रियाशील ई-कॉमर्स प्लेटफॉर्म, उपयोगकर्ता अनुभव और स्केलेबल आर्किटेक्चर पर ध्यान केंद्रित करता है।",
+                    project2Title: "व्यक्तिगत ब्लॉग और सीएमएस",
+                    project2Desc: "बेहतर पठनीयता के लिए कस्टम सीएमएस एकीकरण और पूर्ण UI/UX रीडिज़ाइन के साथ एक व्यक्तिगत ब्लॉग वेबसाइट।",
+                    project3Title: "स्थानीय सेवा खोजक ऐप",
+                    project3Desc: "स्थानीय सेवा खोज के लिए एक मोबाइल-पहला वेब एप्लिकेशन, जिसमें जियोलोकेशन और समीक्षा कार्यक्षमताएँ शामिल हैं।",
+                    project4Title: "डेटा विज़ुअलाइज़ेशन डैशबोर्ड",
+                    project4Desc: "रीयल-टाइम डेटा विज़ुअलाइज़ेशन और व्यापक रिपोर्टिंग के लिए एक कस्टम, इंटरैक्टिव डैशबोर्ड विकसित किया।",
+                    project5Title: "फिनटेक ऐप UI/UX",
+                    project5Desc: "एक फिनटेक एप्लिकेशन के लिए उपयोगकर्ता के अनुकूल और सुरक्षित इंटरफ़ेस डिज़ाइन किया, जिससे उपयोगकर्ता सहभागिता और विश्वास बढ़ा।",
+                    project6Title: "मार्केटिंग लैंडिंग पेज",
+                    project6Desc: "A/B परीक्षण क्षमताओं और लीड जनरेशन फॉर्म के साथ एक उच्च-रूपांतरित मार्केटिंग लैंडिंग पेज बनाया गया।",
+                    projectLink: "प्रोजेक्ट देखें",
+                    testimonialsTitle: "ग्राहक क्या कहते हैं",
+                    testimonial1Text: "\"जॉन एक असाधारण डेवलपर हैं। उन्होंने निर्धारित समय से पहले एक उच्च-गुणवत्ता वाली वेबसाइट वितरित की और उनके साथ काम करना खुशी की बात थी। अत्यधिक अनुशंसित!\"",
+                    testimonial1Author: "जेन स्मिथ <span>सीईओ, टेक सॉल्यूशंस</span>",
+                    testimonial2Text: "\"जॉन ने हमारे ऐप के लिए जो डिज़ाइन का काम किया वह वास्तव में उत्कृष्ट था। सहज, सुंदर, और हमारे ब्रांड के सार को पूरी तरह से पकड़ लिया।\"",
+                    testimonial2Author: "बेरेकेत लेम्मा <span>संस्थापक, एथियोऐप</span>",
+                    testimonial3Text: "\"एक सच्चे पेशेवर! जॉन का विस्तार पर ध्यान और उत्कृष्टता के प्रति प्रतिबद्धता ने हमारी परियोजना को एक बड़ी सफलता बना दिया। हम निश्चित रूप से उनके साथ फिर से काम करेंगे।\"",
+                    testimonial3Author: "सारा चेन <span>मार्केटिंग निदेशक, ग्लोबल कॉर्प</span>",
+                    contactTitle: "संपर्क करें",
+                    contactIntro: "मैं हमेशा नए अवसरों, सहयोगों और बातचीत के लिए खुला रहता हूँ। बेझिझक संपर्क करें!",
+                    contactEmailLabel: "ईमेल:",
+                    contactPhoneLabel: "फ़ोन:",
+                    contactWhatsAppLabel: "व्हाट्सएप:",
+                    contactTelegramLabel: "टेलीग्राम:",
+                    contactImoLabel: "इमो:",
+                    contactImoNumber: "+251 986079581",
+                    contactLocationLabel: "स्थान:",
+                    contactSocialMediaTitle: "सोशल मीडिया पर मुझसे जुड़ें:",
+                    contactFormNote: "या नीचे दिया गया फ़ॉर्म भरें:",
+                    formNamePlaceholder: "आपका नाम",
+                    formEmailPlaceholder: "आपका ईमेल",
+                    formMessagePlaceholder: "आपका संदेश",
+                    formSubmitBtn: "संदेश भेजें",
+                    footerCopyright: "&copy; <span id='currentYear'></span> जॉन डो। सर्वाधिकार सुरक्षित।",
+                    footerBuiltWith: "इथियोपिया में ❤️ के साथ निर्मित।"
+                },
+                es: { // Spanish
+                    pageTitle: "Daniel Tsigu - Mi Portafolio Personal",
+                    navHome: "Inicio",
+                    navAbout: "Sobre mí",
+                    navPortfolio: "Portafolio",
+                    navTestimonials: "Testimonios",
+                    navContact: "Contacto",
+                    heroGreeting: "Hola, soy John Doe",
+                    heroSubtitle: "Un apasionado Desarrollador Web | Diseñador | Creador de Contenido",
+                    heroCta: "Ver mi trabajo",
+                    aboutTitle: "Sobre mí",
+                    aboutP1: "¡Hola! Soy John Doe, un profesional dedicado con una sólida experiencia en desarrollo web y diseño digital. Con sede en Adís Abeba, Etiopía, me especializo en la creación de experiencias web responsivas, fáciles de usar y atractivas.",
+                    aboutP2: "Mi viaje comenzó hace 5 años, impulsado por la pasión por la tecnología y el deseo de construir soluciones innovadoras. Soy competente en HTML, CSS, JavaScript y varios frameworks modernos. También tengo un buen ojo para los principios de UI/UX, asegurando que cada proyecto que emprendo no solo sea funcional sino también estéticamente agradable e intuitivo.",
+                    aboutP3: "Cuando no estoy programando, me puedes encontrar explorando nuevas tendencias de diseño, contribuyendo a proyectos de código abierto o disfrutando de la vibrante cultura de Etiopía. Siempre estoy ansioso por conectar con personas afines y colaborar en nuevas y emocionantes empresas.",
+                    aboutResumeCta: "Descargar Currículum",
+                    portfolioTitle: "Mi Portafolio",
+                    filterAll: "Todos",
+                    filterWeb: "Desarrollo Web",
+                    filterDesign: "Diseño UI/UX",
+                    filterMobile: "Apps Móviles",
+                    project1Title: "Plataforma de E-commerce",
+                    project1Desc: "Una plataforma de comercio electrónico responsiva construida con tecnologías web modernas, enfocada en la experiencia del usuario y una arquitectura escalable.",
+                    project2Title: "Blog Personal y CMS",
+                    project2Desc: "Un sitio web de blog personal con integración CMS personalizada y un rediseño completo de UI/UX para una mejor legibilidad.",
+                    project3Title: "Aplicación Buscador de Servicios Locales",
+                    project3Desc: "Una aplicación web mobile-first para el descubrimiento de servicios locales, con funcionalidades de geolocalización y reseñas.",
+                    project4Title: "Panel de Visualización de Datos",
+                    project4Desc: "Desarrollé un panel interactivo personalizado para la visualización de datos en tiempo real y la elaboración de informes completos.",
+                    project5Title: "UI/UX para Aplicación Fintech",
+                    project5Desc: "Diseñé una interfaz fácil de usar y segura para una aplicación fintech, mejorando la participación y la confianza del usuario.",
+                    project6Title: "Página de Aterrizaje de Marketing",
+                    project6Desc: "Se creó una página de aterrizaje de marketing de alta conversión con capacidades de prueba A/B y formularios de generación de leads.",
+                    projectLink: "Ver Proyecto",
+                    testimonialsTitle: "Lo que dicen los clientes",
+                    testimonial1Text: "\"John es un desarrollador excepcional. Entregó un sitio web de alta calidad antes de lo previsto y fue un placer trabajar con él. ¡Altamente recomendado!\"",
+                    testimonial1Author: "Jane Smith <span>CEO, Tech Solutions</span>",
+                    testimonial2Text: "\"El trabajo de diseño que John hizo para nuestra aplicación fue realmente sobresaliente. Intuitivo, hermoso y capturó perfectamente la esencia de nuestra marca.\"",
+                    testimonial2Author: "Bereket Lemma <span>Fundador, EthioApp</span>",
+                    testimonial3Text: "\"¡Un verdadero profesional! La atención al detalle de John y su compromiso con la excelencia hicieron de nuestro proyecto un gran éxito. Sin duda volveremos a trabajar con él.\"",
+                    testimonial3Author: "Sarah Chen <span>Directora de Marketing, Global Corp</span>",
+                    contactTitle: "Ponte en contacto",
+                    contactIntro: "Siempre estoy abierto a nuevas oportunidades, colaboraciones y conversaciones. ¡No dudes en contactarme!",
+                    contactEmailLabel: "Correo electrónico:",
+                    contactPhoneLabel: "Teléfono:",
+                    contactWhatsAppLabel: "WhatsApp:",
+                    contactTelegramLabel: "Telegram:",
+                    contactImoLabel: "Imo:",
+                    contactImoNumber: "+251 986079581",
+                    contactLocationLabel: "Ubicación:",
+                    contactSocialMediaTitle: "Conéctate conmigo en redes sociales:",
+                    contactFormNote: "O rellena el siguiente formulario:",
+                    formNamePlaceholder: "Tu Nombre",
+                    formEmailPlaceholder: "Tu Correo electrónico",
+                    formMessagePlaceholder: "Tu Mensaje",
+                    formSubmitBtn: "Enviar Mensaje",
+                    footerCopyright: "&copy; <span id='currentYear'></span> Daniel Tsigu. Todos los derechos reservados.",
+                    footerBuiltWith: "Construido con ❤️ en Etiopía."
+                },
+                fr: { // French
+                    pageTitle: "Daniel TSigu - Mon Portfolio Personnel",
+                    navHome: "Accueil",
+                    navAbout: "À propos",
+                    navPortfolio: "Portfolio",
+                    navTestimonials: "Témoignages",
+                    navContact: "Contact",
+                    heroGreeting: "Salut, je suis John Doe",
+                    heroSubtitle: "Un développeur web | designer | créateur de contenu passionné",
+                    heroCta: "Voir mes travaux",
+                    aboutTitle: "À propos de moi",
+                    aboutP1: "Bonjour! Je suis John Doe, un professionnel dévoué avec une solide expérience en développement web et en design numérique. Basé à Addis-Abeba, en Éthiopie, je me spécialise dans la création d'expériences web réactives, conviviales et attrayantes.",
+                    aboutP2: "Mon parcours a commencé il y a 5 ans, animé par une passion pour la technologie et un désir de construire des solutions innovantes. Je maîtrise le HTML, le CSS, le JavaScript et divers frameworks modernes. J'ai également un œil attentif pour les principes d'UI/UX, garantissant que chaque projet que j'entreprends est non seulement fonctionnel, mais aussi esthétiquement agréable et intuitif.",
+                    aboutP3: "Quand je ne code pas, vous pouvez me trouver en train d'explorer de nouvelles tendances de design, de contribuer à des projets open-source ou de profiter de la culture vibrante de l'Éthiopie. Je suis toujours impatient de me connecter avec des personnes partageant les mêmes idées et de collaborer sur de nouvelles entreprises passionnantes.",
+                    aboutResumeCta: "Télécharger le CV",
+                    portfolioTitle: "Mon Portfolio",
+                    filterAll: "Tout",
+                    filterWeb: "Développement Web",
+                    filterDesign: "Conception UI/UX",
+                    filterMobile: "Applications Mobiles",
+                    project1Title: "Plateforme E-commerce",
+                    project1Desc: "Une plateforme de commerce électronique réactive construite avec des technologies web modernes, axée sur l'expérience utilisateur et une architecture évolutive.",
+                    project2Title: "Blog Personnel et CMS",
+                    project2Desc: "Un site web de blog personnel avec intégration CMS personnalisée et une refonte complète de l'UI/UX pour une meilleure lisibilité.",
+                    project3Title: "Application de Recherche de Services Locaux",
+                    project3Desc: "Une application web mobile-first pour la découverte de services locaux, dotée de fonctionnalités de géolocalisation et de révision.",
+                    project4Title: "Tableau de Bord de Visualisation de Données",
+                    project4Desc: "Développement d'un tableau de bord interactif personnalisé pour la visualisation de données en temps réel et des rapports complets.",
+                    project5Title: "UI/UX pour Application Fintech",
+                    project5Desc: "Conception d'une interface conviviale et sécurisée pour une application fintech, améliorant l'engagement et la confiance des utilisateurs.",
+                    project6Title: "Page de destination marketing",
+                    project6Desc: "Création d'une page de destination marketing à fort taux de conversion, dotée de capacités de test A/B et de formulaires de génération de leads.",
+                    projectLink: "Voir le projet",
+                    testimonialsTitle: "Ce que disent les clients",
+                    testimonial1Text: "\"John est un développeur exceptionnel. Il a livré un site web de haute qualité en avance sur le calendrier et ce fut un plaisir de travailler avec lui. Fortement recommandé !\"",
+                    testimonial1Author: "Jane Smith <span>PDG, Tech Solutions</span>",
+                    testimonial2Text: "\"Le travail de conception que John a réalisé pour notre application était vraiment remarquable. Intuitive, belle et a parfaitement capturé l'essence de notre marque.\"",
+                    testimonial2Author: "Bereket Lemma <span>Fondateur, EthioApp</span>",
+                    testimonial3Text: "\"Un vrai professionnel ! L'attention aux détails de John et son engagement envers l'excellence ont fait de notre projet un grand succès. Nous travaillerons certainement à nouveau avec lui.\"",
+                    testimonial3Author: "Sarah Chen <span>Directrice Marketing, Global Corp</span>",
+                    contactTitle: "Prendre contact",
+                    contactIntro: "Je suis toujours ouvert aux nouvelles opportunités, collaborations et conversations. N'hésitez pas à me contacter !",
+                    contactEmailLabel: "E-mail :",
+                    contactPhoneLabel: "Téléphone :",
+                    contactWhatsAppLabel: "WhatsApp :",
+                    contactTelegramLabel: "Telegram :",
+                    contactImoLabel: "Imo :",
+                    contactImoNumber: "+251 986079581",
+                    contactLocationLabel: "Localisation :",
+                    contactSocialMediaTitle: "Connectez-vous avec moi sur les réseaux sociaux :",
+                    contactFormNote: "Ou remplissez le formulaire ci-dessous :",
+                    formNamePlaceholder: "Votre Nom",
+                    formEmailPlaceholder: "Votre E-mail",
+                    formMessagePlaceholder: "Votre Message",
+                    formSubmitBtn: "Envoyer le Message",
+                    footerCopyright: "&copy; <span id='currentYear'></span> Daniel Tsigu. Tous droits réservés.",
+                    footerBuiltWith: "Construit avec ❤️ en Éthiopie."
+                },
+                ar: { // Arabic - Right-to-Left (RTL) language. Requires CSS adjustment.
+                    pageTitle: "جون دو - محفظتي الشخصية",
+                    navHome: "الرئيسية",
+                    navAbout: "عني",
+                    navPortfolio: "المعرض",
+                    navTestimonials: "الشهادات",
+                    navContact: "اتصل بي",
+                    heroGreeting: "مرحباً، أنا جون دو",
+                    heroSubtitle: "مطور ويب | مصمم | منشئ محتوى شغوف",
+                    heroCta: "عرض أعمالي",
+                    aboutTitle: "عني",
+                    aboutP1: "مرحباً! أنا جون دو، محترف متخصص ذو خلفية قوية في تطوير الويب والتصميم الرقمي. مقيم في أديس أبابا، إثيوبيا، أتخصص في إنشاء تجارب ويب سريعة الاستجابة، سهلة الاستخدام، وجذابة.",
+                    aboutP2: "بدأت رحلتي قبل 5 سنوات، مدفوعًا بشغف للتكنولوجيا ورغبة في بناء حلول مبتكرة. أنا بارع في HTML، CSS، JavaScript، ومختلف الأطر الحديثة. لدي أيضًا عين ثاقبة لمبادئ UI/UX، مما يضمن أن كل مشروع أقوم به ليس وظيفيًا فحسب، بل جميلًا وبديهيًا أيضًا.",
+                    aboutP3: "عندما لا أكون مشغولاً بالبرمجة، يمكنك أن تجدني أستكشف اتجاهات التصميم الجديدة، أساهم في مشاريع مفتوحة المصدر، أو أستمتع بالثقافة الإثيوبية النابضة بالحياة. أنا دائمًا حريص على التواصل مع الأفراد ذوي التفكير المماثل والتعاون في مشاريع جديدة ومثيرة.",
+                    aboutResumeCta: "تنزيل السيرة الذاتية",
+                    portfolioTitle: "معرض أعمالي",
+                    filterAll: "الكل",
+                    filterWeb: "تطوير الويب",
+                    filterDesign: "تصميم واجهة المستخدم/تجربة المستخدم",
+                    filterMobile: "تطبيقات الجوال",
+                    project1Title: "منصة التجارة الإلكترونية",
+                    project1Desc: "منصة تجارة إلكترونية سريعة الاستجابة مبنية بتقنيات الويب الحديثة، مع التركيز على تجربة المستخدم والهيكل القابل للتطوير.",
+                    project2Title: "مدونة شخصية ونظام إدارة المحتوى (CMS)",
+                    project2Desc: "موقع مدونة شخصية مع تكامل نظام إدارة المحتوى المخصص وإعادة تصميم كاملة لواجهة المستخدم/تجربة المستخدم لتحسين قابلية القراءة.",
+                    project3Title: "تطبيق مكتشف الخدمات المحلية",
+                    project3Desc: "تطبيق ويب للهاتف المحمول أولاً لاكتشاف الخدمات المحلية، ويضم وظائف تحديد الموقع الجغرافي والمراجعة.",
+                    project4Title: "لوحة تحكم عرض البيانات",
+                    project4Desc: "قمت بتطوير لوحة تحكم تفاعلية مخصصة لعرض البيانات في الوقت الفعلي وإعداد التقارير الشاملة.",
+                    project5Title: "واجهة المستخدم/تجربة المستخدم لتطبيق Fintech",
+                    project5Desc: "صممت واجهة سهلة الاستخدام وآمنة لتطبيق Fintech، مما يعزز مشاركة المستخدم وثقته.",
+                    project6Title: "صفحة هبوط تسويقية",
+                    project6Desc: "تم إنشاء صفحة هبوط تسويقية عالية التحويل مزودة بقدرات اختبار A/B ونماذج لتوليد العملاء المحتملين.",
+                    projectLink: "عرض المشروع",
+                    testimonialsTitle: "ماذا يقول العملاء",
+                    testimonial1Text: "\"جون مطور استثنائي. لقد سلم موقعًا إلكترونيًا عالي الجودة قبل الموعد المحدد وكان من دواعي سروري العمل معه. موصى به للغاية!\"",
+                    testimonial1Author: "جين سميث <span>الرئيس التنفيذي، حلول التكنولوجيا</span>",
+                    testimonial2Text: "\"كان عمل التصميم الذي قام به جون لتطبيقنا رائعًا حقًا. بديهي وجميل، والتقط جوهر علامتنا التجارية تمامًا.\"",
+                    testimonial2Author: "بركة ليمما <span>مؤسس، EthioApp</span>",
+                    testimonial3Text: "\"محترف حقيقي! اهتمام جون بالتفاصيل والتزامه بالتميز جعل مشروعنا نجاحًا كبيرًا. سنعمل معه بالتأكيد مرة أخرى.\"",
+                    testimonial3Author: "سارة تشن <span>مديرة التسويق، جلوبال كورب</span>",
+                    contactTitle: "تواصل معي",
+                    contactIntro: "أنا دائماً منفتح على الفرص الجديدة، التعاون، والمحادثات. لا تتردد في التواصل!",
+                    contactEmailLabel: "البريد الإلكتروني:",
+                    contactPhoneLabel: "الهاتف:",
+                    contactWhatsAppLabel: "الواتساب:",
+                    contactTelegramLabel: "التليجرام:",
+                    contactImoLabel: "الإيمو:",
+                    contactImoNumber: "+251 986079581",
+                    contactLocationLabel: "الموقع:",
+                    contactSocialMediaTitle: "تواصل معي عبر وسائل التواصل الاجتماعي:",
+                    contactFormNote: "أو املأ النموذج أدناه:",
+                    formNamePlaceholder: "اسمك",
+                    formEmailPlaceholder: "بريدك الإلكتروني",
+                    formMessagePlaceholder: "رسالتك",
+                    formSubmitBtn: "إرسال الرسالة",
+                    footerCopyright: "&copy; <span id='currentYear'></span> جون دو. جميع الحقوق محفوظة.",
+                    footerBuiltWith: "صنع بـ ❤️ في إثيوبيا."
+                },
+                zh: { // Chinese (Simplified)
+                    pageTitle: "约翰·多伊 - 我的个人作品集",
+                    navHome: "首页",
+                    navAbout: "关于我",
+                    navPortfolio: "作品集",
+                    navTestimonials: "客户评价",
+                    navContact: "联系方式",
+                    heroGreeting: "你好，我是约翰·多伊",
+                    heroSubtitle: "一位充满热情的网页开发者 | 设计师 | 内容创作者",
+                    heroCta: "查看我的作品",
+                    aboutTitle: "关于我",
+                    aboutP1: "你好！我是约翰·多伊，一位专业的开发者，在网页开发和数字设计方面拥有丰富经验。我常驻埃塞俄比亚的亚的斯亚贝巴，专注于创建响应式、用户友好且引人入胜的网页体验。",
+                    aboutP2: "我的职业生涯始于5年前，源于对技术的热情和对创新解决方案的渴望。我精通HTML、CSS、JavaScript以及各种现代框架。我对UI/UX原则也有敏锐的洞察力，确保我承担的每个项目不仅功能强大，而且美观直观。",
+                    aboutP3: "不写代码的时候，我喜欢探索新的设计趋势，为开源项目做贡献，或者享受埃塞俄比亚充满活力的文化。我总是渴望与志同道合的人建立联系，并在令人兴奋的新项目中进行合作。",
+                    aboutResumeCta: "下载简历",
+                    portfolioTitle: "我的作品集",
+                    filterAll: "全部",
+                    filterWeb: "网页开发",
+                    filterDesign: "UI/UX设计",
+                    filterMobile: "移动应用",
+                    project1Title: "电子商务平台",
+                    project1Desc: "一个使用现代网络技术构建的响应式电子商务平台，注重用户体验和可扩展架构。",
+                    project2Title: "个人博客和CMS",
+                    project2Desc: "一个具有自定义CMS集成和完整UI/UX重新设计的个人博客网站，以提高可读性。",
+                    project3Title: "本地服务查找应用",
+                    project3Desc: "一个用于本地服务发现的移动优先网络应用程序，具有地理定位和评论功能。",
+                    project4Title: "数据可视化仪表板",
+                    project4Desc: "开发了一个定制的交互式仪表板，用于实时数据可视化和全面的报告。",
+                    project5Title: "金融科技应用UI/UX",
+                    project5Desc: "为金融科技应用设计了一个用户友好且安全的界面，提高了用户参与度和信任度。",
+                    project6Title: "营销着陆页",
+                    project6Desc: "创建了一个具有A/B测试功能和潜在客户生成表单的高转化率营销着陆页。",
+                    projectLink: "查看项目",
+                    testimonialsTitle: "客户评价",
+                    testimonial1Text: "“约翰是一位杰出的开发者。他提前交付了一个高质量的网站，并且合作非常愉快。强烈推荐！”",
+                    testimonial1Author: "简·史密斯 <span>Tech Solutions首席执行官</span>",
+                    testimonial2Text: "“约翰为我们的应用所做的设计工作确实非常出色。直观、美观，完美地抓住了我们品牌的精髓。”",
+                    testimonial2Author: "贝瑞克特·莱玛 <span>EthioApp创始人</span>",
+                    testimonial3Text: "“真正的专业人士！约翰对细节的关注和对卓越的承诺使我们的项目取得了巨大成功。我们肯定会再次与他合作。”",
+                    testimonial3Author: "莎拉·陈 <span>Global Corp营销总监</span>",
+                    contactTitle: "联系我",
+                    contactIntro: "我总是乐于接受新的机会、合作和交流。请随时与我联系！",
+                    contactEmailLabel: "电子邮件：",
+                    contactPhoneLabel: "电话：",
+                    contactWhatsAppLabel: "WhatsApp：",
+                    contactTelegramLabel: "Telegram：",
+                    contactImoLabel: "Imo：",
+                    contactImoNumber: "+251 986079581",
+                    contactLocationLabel: "地点：",
+                    contactSocialMediaTitle: "在社交媒体上与我联系：",
+                    contactFormNote: "或者填写下面的表格：",
+                    formNamePlaceholder: "您的姓名",
+                    formEmailPlaceholder: "您的电子邮件",
+                    formMessagePlaceholder: "您的留言",
+                    formSubmitBtn: "发送消息",
+                    footerCopyright: "&copy; <span id='currentYear'></span> 约翰·多伊。保留所有权利。",
+                    footerBuiltWith: "在埃塞俄比亚用心 ❤️ 制作。"
+                }
+            };
+
+            // --- Core Functions ---
+
+            // Function to set the language
+            function setLanguage(lang) {
+                // Update html lang attribute for accessibility and SEO
+                document.documentElement.lang = lang;
+
+                // Apply translations
+                document.querySelectorAll('[data-key]').forEach(element => {
+                    const key = element.getAttribute('data-key');
+                    if (translations[lang] && translations[lang][key]) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.placeholder = translations[lang][key];
+                        } else if (key.includes('footerCopyright') || key.includes('footerBuiltWith') || key.includes('testimonial') || key.includes('contactImoNumber')) {
+                            // Special handling for HTML content within data-key (like span for year or author title)
+                            element.innerHTML = translations[lang][key];
+                            // Update the year for footer copyright
+                            if (key.includes('footerCopyright')) {
+                                document.getElementById('currentYear').textContent = new Date().getFullYear();
+                            }
+                        } else if (element.tagName === 'TITLE') {
+                            document.title = translations[lang][key];
+                        } else {
+                            element.textContent = translations[lang][key];
+                        }
+                    }
+                });
+
+                // Handle RTL (Right-to-Left) for Arabic
+                if (lang === 'ar') {
+                    document.body.style.direction = 'rtl';
+                    document.body.style.textAlign = 'right'; // Adjust text alignment globally
+                    // Adjust specific elements if needed
+                } else {
+                    document.body.style.direction = 'ltr';
+                    document.body.style.textAlign = 'left'; // Reset to default
+                }
+
+                // Store selected language in localStorage
+                localStorage.setItem('selectedLanguage', lang);
+            }
+
+            // Get preferred language from localStorage or browser settings
+            const storedLang = localStorage.getItem('selectedLanguage');
+            const browserLang = navigator.language.split('-')[0]; // e.g., 'en', 'es'
+            const defaultLang = translations[storedLang] ? storedLang : (translations[browserLang] ? browserLang : 'en');
+
+            // Set initial language
+            setLanguage(defaultLang);
+            document.getElementById('language-switcher').value = defaultLang;
+
+            // --- Event Listeners ---
+
+            // 1. Language Switcher
+            const langSwitcher = document.getElementById('language-switcher');
+            if (langSwitcher) {
+                langSwitcher.addEventListener('change', function() {
+                    setLanguage(this.value);
+                });
+            }
+
+            // 2. Smooth Scrolling for Navigation Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const headerOffset = document.querySelector('nav').offsetHeight;
+                        const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+
+                        // Close mobile menu after clicking a link
+                        if (window.innerWidth <= 768) {
+                            const navLinks = document.querySelector('.nav-links');
+                            const burger = document.querySelector('.burger');
+                            navLinks.classList.remove('nav-active');
+                            burger.classList.remove('toggle');
+                        }
+                    }
+                });
+            });
+
+            // 3. Mobile Navigation Toggle
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('nav-active');
+                burger.classList.toggle('toggle');
+            });
+
+            // 4. Add background to Navbar on scroll
+            const nav = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+
+                // Show/hide scroll to top button
+                const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+                if (window.scrollY > 300) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            });
+
+            // 5. Simple form submission handler (client-side only)
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const name = this.name.value;
+                    const email = this.email.value;
+                    const message = this.message.value;
+
+                    if (!name || !email || !message) {
+                        alert("Please fill in all required fields.");
+                        return;
+                    }
+
+                    console.log("Form Submitted!");
+                    console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
+
+                    // In a real application, you would use Fetch API to send data to a backend:
+                    /*
+                    fetch('YOUR_BACKEND_FORM_ENDPOINT', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ name, email, message }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert("Thank you for your message, " + name + "! I'll get back to you soon.");
+                        this.reset();
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        alert("There was an error sending your message. Please try again later.");
+                    });
+                    */
+                    alert("Thank you for your message, " + name + "! I'll get back to you soon.");
+                    this.reset();
+                });
+            }
+
+            // 6. Scroll to Top Button functionality
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            if (scrollToTopBtn) {
+                scrollToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // 7. Portfolio Filtering
+            const filterButtons = document.querySelectorAll('.portfolio-filters button');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block'; // Show item
+                            setTimeout(() => { // Re-animate if desired
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                            }, 50); // Small delay for re-animation
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                item.style.display = 'none'; // Hide after animation
+                            }, 500); // Match CSS transition duration
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
